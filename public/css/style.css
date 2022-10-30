@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+.container {
+    width: 100%;
+    min-height: 100%;
+    background-image: linear-gradient(220deg, rgba(29,28,229,1) 64%, rgba(92,184,228,1) 64%);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    color: rgba(29,28,229,1);
+}
+section {
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+section > h1 {
+    width: 19rem;
+    padding: 0.5rem 2rem;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.box {
+    padding: 0.5rem 1.3rem;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+.select {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+.select select {
+    width: 10em;
+    font-size: 17px;
+    padding: 0.3rem;
+    border: 1px solid rgba(0, 0, 0, 0.756);
+    outline: none;
+}
+.select select option {
+    margin: 0.3rem 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+main ul, main .box > form {
+    padding: 0 0.8rem;
+    margin: 0.2rem 0;
+}
+main ul li > form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main ul li div {
+    display: flex;
+}
+main ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.256);
+    font-size: 17px;
+    list-style-type: none;
+    align-items: center;
+    min-height: 3rem;
+}
+main ul li input {
+    margin: 0.1rem 0.3rem 0 0.3rem;
+}
+main ul li input+p {
+    text-transform: capitalize;
+    font-size: 17px;
+}
+main ul li input:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: rgba(29,28,229,1);
+    font-size: 15px;
+}
+main ul li:last-child {
+    border-bottom: none;
+}
+main ul li .fa-trash {
+    color: rgba(255, 0, 0, 0.715);
+    cursor: pointer;
+    font-size: 15px;
+}
+main ul li button {
+    display: none;
+    border: none;
+    outline: none;
+}
+main ul li button.active {
+    display: block;
+}
+.box > form {
+    display: flex;
+    margin: 0.3rem 0;
+}
+.box > form input {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+.box > form button {
+    border: none;
+    outline: none;
+    background-color: rgba(29,28,229,1);
+    color: white;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    cursor: pointer;
+}

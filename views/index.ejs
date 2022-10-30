@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f724637ece.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Todo - make each day count</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="box"><%= date %></h1>
+      </header>
+      <section>
+        <h1><%= heading %></h1>
+      </section>
+      <main>
+        <div class="box">
+          <div class="select">
+            <select name="" id="selectTag">
+              <option value="">Select Note Type</option>
+              <option value="home">Home</option>
+              <option value="work">Work</option>
+              <option value="study">Study</option>
+            </select>
+          </div>
+          <ul>
+            <% if( list && list.length !== 0) { %> <% for( let i = 0; i <
+            list.length; i++ ) { %>
+            <li>
+              <form action="/delete/<%= list[i]._id %>" method="post">
+                <div>
+                  <input type="checkbox" name="" class="checkbox" />
+                  <p><%= list[i].name %></p>
+                </div>
+                <button type="submit">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </form>
+            </li>
+            <% } %> <% } %>
+          </ul>
+          <form action="/" method="post">
+            <input
+              type="text"
+              name="listText"
+              id=""
+              placeholder="New Item"
+              autocomplete="off"
+            />
+            <button type="submit">+</button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script>
+      const checkboxes = document.querySelectorAll(".checkbox");
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          if (checkbox.checked) {
+            checkbox.parentElement.nextElementSibling.classList.add("active");
+          } else {
+            checkbox.parentElement.nextElementSibling.classList.remove(
+              "active"
+            );
+          }
+        });
+      });
+      //select
+      const select = document.querySelector("#selectTag");
+      select.addEventListener("change", () => {
+        if (select.value !== "home") {
+          location.href = `/${select.value}`;
+        } else {
+          console.log(select.value);
+          location.href = "/";
+        }
+      });
+    </script>
+  </body>
+</html>
