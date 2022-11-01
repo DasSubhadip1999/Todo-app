@@ -1,9 +1,7 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
-const url =
-  process.env.URL ||
-  "mongodb+srv://subhadipdas:Subha%40123@cluster0.nwqn686.mongodb.net";
-//const port = process.env.PORT || "27017";
-const db = process.env.DB || "todolistDB";
+const url = process.env.URL;
+const db = process.env.DB;
 
 exports.databaseConnection = () => {
   mongoose
